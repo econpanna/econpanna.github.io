@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>"경영 똑바로 하시오" 옐로카드 내미는 주주들"</title>
+        <style>
+            /* 모든 태그에
+            * { 
+                outline: 1px dashed red;
+                font-family: sans-serif;
+            } 
+            자식이 새로운 스타일 덮어쓰기
+            q { 
+                font-family: serif;
+            }
+            p 중 첫번째 자식
+            p:first-child { 
+                width: 60%;
+            }
+            p 중 두번째 자식: 없음. 아무곳에도 적용되지 않음. 안쓰는것이 좋은 selector
+            p:nth-child(2) {
+                width: 60%;
+                margin-left: 40%;
+            }
+            body 밑의 모든 p 
+            body p {
+            }
+            */
+            html { /* 모든 자식 노드에 상속 */
+                font-family: sans-serif;
+            }
+            p {
+                color: #444444;
+            }
+            div {
+                width: 300px;
+                float: left;
+                margin-right: 10px;
+            }
+            svg {
+                border: 1px solid #444444;
+            }
+        </style>
+    </head>
+    
+    <body>
+        <p>전 세계 행동주의 투자자들의 운용 자산은 2009년 362억달러에서 2015년 1300억달러(약 147조원)까지 연평균 23.7%로 빠르게 성장하고 있다.</p>
+        
+        <div> <!--division 딱히 의미없는 block. 문단이 아니므로 p는 의미가 맞지 않음-->
+            <svg></svg> <!--svg는 하나의 큰 글자처럼 취급. 항상 어떤 블럭 안에. body안에 그냥 넣으면 안됨-->
+        </div>
+        <!--p태그는 정해진 크기가 없음. 어떤 element는 내재된 크기가 있음..예, img, svg..-->
+
+        <p>지난해 국내 최초로 행동주의 펀드를 출시한 라임자산운용의 원종준 대표는 <q>스튜어드십 코드가 정착되고 지배구조 개선이 추진되면 한국에서 주가가 20% 이상 오를 기업들이 적지 않다</q>고 말했다</p>
+    </body>
+</html>
