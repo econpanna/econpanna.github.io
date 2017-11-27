@@ -93,6 +93,7 @@
             
                 cells.select('path')
                     .attr('d', function(d, i) {
+                        console.log(parts[0]);
                         return 'M' + parts[i].join('L') + 'Z';
                     });
                 cells.select('circle')
