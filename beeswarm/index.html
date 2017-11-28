@@ -33,12 +33,11 @@
                 data.forEach(function (d) {
                     d.freq = +d.freq;
                 });
-            
                 render(data);
             
-                window.addEventListener('resize', function() {
+                window.addEventListener('resize', function () {
                     render(data);
-                });
+                })
             });
             
             function render(data) {
@@ -49,11 +48,11 @@
                 var root = d3.select('svg')
                     .attr('width', W)
                     .attr('height', H);
-                var x = d3.scaleLog()
+                var x = d3.scaleLog() 
                     .domain(d3.extent(data, function (d) { return d.freq; }))
                     .range([0, W - L - R]);
                 var xAxis = d3.axisBottom()
-                    .ticks(10, '.0s')
+                    .ticks(10, '.0s') 
                     .scale(x);
                 root.select('.axis')
                     .style('transform', 'translate(' + L + 'px, ' + (H - B) + 'px)')
@@ -71,8 +70,7 @@
                     .x(function (d) { return d.x; })
                     .y(function (d) { return d.y; })
                     .polygons(data);
-            
-                if(root.select('.data .cell').empty()) {
+                if (root.select('.data.cell').empty()) {
                     var cells = root.select('.data')
                         .style('transform', 'translate(' + L + 'px, ' + T + 'px)')
                         .selectAll('g.cell')
@@ -82,7 +80,7 @@
                         .attr('class', 'cell');
             
                     cells.append('circle')
-                        .attr('r', 3);
+                        .attr('r', 3)
                     cells.append('path');
                     cells.append('title')
                         .text(function (d) { return d.word; });
@@ -93,12 +91,12 @@
             
                 cells.select('path')
                     .attr('d', function(d, i) {
-                        console.log(parts[0]);
-                        return 'M' + parts[i].join('L') + 'Z';
+                        return parts[i] ? 'M' + parts[i].join('L') + 'Z' : ''; 
                     });
                 cells.select('circle')
                     .attr('cx', function (d) { return d.x; })
                     .attr('cy', function (d) { return d.y; })
+            
             }                          
         </script>
     </body>
