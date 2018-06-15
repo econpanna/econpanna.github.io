@@ -1,4 +1,4 @@
 ## Welcome to econpanna
 
-Espresso Conpanna Page
+Econpanna Page
 
